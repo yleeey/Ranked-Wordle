@@ -1,0 +1,25 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tile-gap);
+  padding: 20px 0;
+}
+
+.grid-row {
+  display: flex;
+  gap: var(--tile-gap);
+}
+
+.grid-row--shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.grid-row--win .tile {
+  animation: bounce 0.6s ease-in-out both;
+}
+
+.grid-row--win .tile:nth-child(1) { animation-delay: 0.0s; }
+.grid-row--win .tile:nth-child(2) { animation-delay: 0.1s; }
+.grid-row--win .tile:nth-child(3) { animation-delay: 0.2s; }
+.grid-row--win .tile:nth-child(4) { animation-delay: 0.3s; }
+.grid-row--win .tile:nth-child(5) { animation-delay: 0.4s; }

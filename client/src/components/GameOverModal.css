@@ -1,0 +1,91 @@
+.gameover-modal {
+  background: var(--surface);
+  border: 1px solid var(--border-bright);
+  border-top: 3px solid #ef5350;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeSlideUp 0.25s ease-out;
+}
+
+.gameover-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gameover-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #ef5350;
+}
+
+.gameover-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.gameover-answer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.gameover-answer-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.gameover-word {
+  display: flex;
+  gap: 6px;
+}
+
+.gameover-letter {
+  width: 44px;
+  height: 44px;
+  background: var(--correct);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  animation: popIn 0.3s ease-out both;
+}
+
+.gameover-lb-btn {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border-bright);
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s;
+}
+
+.gameover-lb-btn:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+}

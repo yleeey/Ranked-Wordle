@@ -1,0 +1,78 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 20px;
+  user-select: none;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  height: 56px;
+  min-width: 38px;
+  padding: 0 4px;
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.key::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background 0.1s;
+}
+
+.key:hover:not(:disabled)::after {
+  background: rgba(255,255,255,0.05);
+}
+
+.key:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+.key:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.key--wide {
+  min-width: 58px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.key--correct {
+  background: var(--correct);
+  border-color: var(--correct);
+  color: #fff;
+}
+
+.key--present {
+  background: var(--present);
+  border-color: var(--present);
+  color: #fff;
+}
+
+.key--absent {
+  background: #1a1a1a;
+  border-color: #222;
+  color: var(--text-dim);
+}

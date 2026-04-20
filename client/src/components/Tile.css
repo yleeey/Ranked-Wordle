@@ -1,0 +1,78 @@
+.tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: border-color 0.1s;
+  transform-style: preserve-3d;
+  background: var(--surface);
+}
+
+.tile-letter {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.tile--empty {
+  border-color: var(--border);
+}
+
+.tile--filled {
+  border-color: var(--border-bright);
+  animation: popIn 0.1s ease-in-out;
+}
+
+.tile--pop {
+  animation: popIn 0.08s ease-out;
+}
+
+.tile--flipping {
+  animation: flipIn 0.15s ease-in forwards;
+}
+
+.tile--correct {
+  background: var(--correct);
+  border-color: var(--correct);
+}
+
+.tile--correct .tile-letter {
+  color: #fff;
+}
+
+.tile--present {
+  background: var(--present);
+  border-color: var(--present);
+}
+
+.tile--present .tile-letter {
+  color: #fff;
+}
+
+.tile--absent {
+  background: var(--absent);
+  border-color: var(--absent);
+}
+
+.tile--absent .tile-letter {
+  color: var(--text-muted);
+}
+
+/* Corner accent on correct */
+.tile--correct::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+}

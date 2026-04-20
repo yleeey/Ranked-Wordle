@@ -1,0 +1,104 @@
+:root {
+  --bg: #929292;
+  --surface: #1f1d1d;
+  --surface2: #302e2e;
+  --border: #2a2a2a;
+  --border-bright: #3a3a3a;
+  --text: #f0f0f0;
+  --text-muted: #666;
+  --text-dim: #444;
+  --accent: hsl(0, 41%, 87%);
+  --accent-dark: #535353;
+  --correct: #4caf50;
+  --present: #ff9800;
+  --absent: #8b6969;
+  --correct-text: #fff;
+  --present-text: #fff;
+  --absent-text: #888;
+  --font-display: 'Clear Sans', 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --tile-size: 62px;
+  --tile-gap: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: var(--font-mono);
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+@keyframes flipIn {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-90deg); }
+}
+
+@keyframes flipOut {
+  50% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
+  50% { box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent); }
+}
